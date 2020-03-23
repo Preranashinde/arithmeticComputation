@@ -41,14 +41,21 @@ echo "Elements in dictionary to array" ${array[@]}
 #Computation result in the descending order using sorting
 declare -a descendingArray
 declare -a ascendingArray
-function descending()
+function descendingArray()
 {
 echo -n "descending array is:"
 readarray -t descendingArray < <(printf '%s\n' "${array[@]}" | sort -r --numeric-sort)
 echo "${descendingArray[@]}"
 }
 
+function ascendingArray()
+{
+echo -n "ascending array is:"
+readarray -t ascendingArray < <(printf '%s\n' "${array[@]}" | sort --numeric-sort)
+echo "${ascendingArray[@]}"
+}
 calculateTheResult
 toPrintResult
 dictionaryToArray
-descending
+descendingArray
+ascendingArray
