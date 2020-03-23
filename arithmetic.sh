@@ -15,6 +15,7 @@ function calculate()
 	dict[operation1]=$((a + b * c))
 	dict[operation2]=$((a * b + c))
 	dict[operation3]=$((c + a / b))
+	dict[operation4]=$((a % b + c))
 }
 
 function print()
@@ -22,6 +23,7 @@ function print()
 	echo "$a + $b * $c = ${dict[operation1]}"
 	echo "$a * $b + $c = ${dict[operation2]}"
 	echo "$c + $a / $b = ${dict[operation3]}"
+	echo "$a % $b + $c = ${dict[operation4]}"
 }
 calculate
 print
