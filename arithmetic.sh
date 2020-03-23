@@ -35,6 +35,7 @@ function dictionaryToArray()
 	do
 		array[index]=${dictionary[operation$((index+1))]}
 	done
+	echo "Elements in dictionary to array" ${array[@]}
 }
 calculateTheResult
 toPrintResult
