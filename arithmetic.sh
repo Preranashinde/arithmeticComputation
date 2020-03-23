@@ -13,11 +13,13 @@ declare -A dict
 function calculate()
 {
 	dict[operation1]=$((a + b * c))
+	dict[operation2]=$((a * b + c))
 }
 
 function print()
 {
-	echo "$a + $b + $c = ${dict[operation1]}"
+	echo "$a + $b * $c = ${dict[operation1]}"
+	echo "$a * $b + $c = ${dict[opeartion2]}"
 }
 calculate
 print
