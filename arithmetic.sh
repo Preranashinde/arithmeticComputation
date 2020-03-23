@@ -7,7 +7,7 @@ read -p "Enter the third number:" c
 
 #Declaring dictionary
 declare -A dictionary
-declare -B array
+declare -a array
 
 #Calculate the results of arithmetic operation
 
@@ -35,7 +35,20 @@ function dictionaryToArray()
 	do
 		array[index]=${dictionary[operation$((index+1))]}
 	done
+echo "Elements in dictionary to array" ${array[@]}
 }
+
+#Computation result in the descending order using sorting
+declare -a descendingArray
+declare -a ascendingArray
+function descending()
+{
+echo -n "descending array is:"
+readarray -t descendingArray < <(printf '%s\n' "${array[@]}" | sort -r --numeric-sort)
+echo "${descendingArray[@]}"
+}
+
 calculateTheResult
 toPrintResult
 dictionaryToArray
+descending
